@@ -1,9 +1,13 @@
 .content {
   background-image: url("/images/Q+AL\ Live\ Around\ The\ World\ \(1\).jpg");
   background-repeat: no-repeat;
-  background-size: 90vw;
+  background-size: cover;
 }
 
 body > main > div > div.top > nav {
   background-color: rgba(0, 0, 0, 0);
+}
+
+body > main > div > div.top {
+  height: 80%;
 }
