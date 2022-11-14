@@ -91,3 +91,7 @@ a:hover {
 .brand {
   font-size: 2em;
 }
+
+.library-icon {
+  transform: scaleX(-1);
+}
