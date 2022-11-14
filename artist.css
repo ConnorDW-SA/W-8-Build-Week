@@ -1,7 +1,30 @@
+html,
+body {
+  font-family: "GothamMedium";
+  overflow: hidden;
+}
+
 .content {
-  background-image: url("/images/Q+AL\ Live\ Around\ The\ World\ \(1\).jpg");
+  /* background-image: url("");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  width: 100%;
+  height: 80%;
+  position: relative;
+}
+
+.content::before {
+  content: "";
+  background-image: url("/images/Q+AL\ Live\ Around\ The\ World\ \(1\).jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+  z-index: 0;
 }
 
 body > main > div > div.top > nav {
@@ -9,5 +32,18 @@ body > main > div > div.top > nav {
 }
 
 body > main > div > div.top {
-  height: 80%;
+  height: 60%;
+}
+
+#bottom-div {
+  height: 100%;
+  background: rgb(119, 119, 119);
+  background: linear-gradient(180deg, rgb(94, 94, 94) 10%, rgb(19, 18, 18) 30%);
+  margin-top: 11.8vh;
+}
+
+#artist-content {
+  position: relative;
+  margin-top: 30vh;
+  margin-left: 5vh;
 }
