@@ -18,6 +18,8 @@ h2 {
 
     position: relative;
     align-items: center;
+
+    border-radius: 0.3em;
 }
 
 .small-card .img {
@@ -76,6 +78,7 @@ h2 {
     padding: 1em;
     min-height: 15em;
     position: relative;
+    border-radius: 0.3em;
 }
 
 .big-card .img {
@@ -84,9 +87,26 @@ h2 {
     height: 100%;
 
     margin-bottom: 1em;
+    border-radius: 0.25em;
 }
 
 .big-card .text p {
     color: rgba(252, 252, 252, 0.473);
     font-size: 0.8em;
+}
+
+.announcement {
+    background-color: black;
+}
+
+.announcement h4 {
+    margin-bottom: 1em;
+}
+
+.advert {
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+}
+.advert:hover {
+    transform: scale(1.1);
 }

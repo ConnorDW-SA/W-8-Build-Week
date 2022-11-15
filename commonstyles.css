@@ -6,7 +6,7 @@ html,
 body {
     background-color: #1e1e1e;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
     height: 100%;
     width: 100%;
 }
@@ -29,6 +29,7 @@ body {
     width: 17.5%;
     height: 100%;
     background-color: black;
+    position: sticky;
 }
 
 main {
@@ -75,6 +76,7 @@ nav .user img {
 
 .content {
     flex-grow: 1;
+    overflow-y: scroll;
 }
 
 a {
@@ -99,4 +101,23 @@ a:hover {
 }
 .library-icon {
     transform: scaleX(-1);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #616161;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #707070;
 }
