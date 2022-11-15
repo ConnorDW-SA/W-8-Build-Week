@@ -1,75 +1,38 @@
 html,
 body {
   font-family: "GothamMedium";
-  overflow: hidden;
 }
 
-.content {
-  background-size: cover;
-  width: 100%;
-  height: 60%;
-  position: relative;
-}
-/* 
-.content::before {
-  content: "";
-  background-image: url("/images/Q+AL\ Live\ Around\ The\ World\ \(1\).jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.6;
-  z-index: 0;
-} */
-
-body > main > div > div.top > nav {
+body > main > div > div.album-picture > nav {
   background-color: rgba(0, 0, 0, 0);
   position: relative;
+  z-index: 1;
 }
-
-body > main > div > div.top {
-  height: 40%;
-}
-
-#bottom-div {
+.content {
+  width: 100%;
   height: 100%;
-  background: rgb(119, 119, 119);
-  background: linear-gradient(180deg, rgb(65, 64, 64) 10%, rgb(19, 18, 18) 30%);
-  position: relative;
 }
-
-#artist-content {
-  position: relative;
-  margin-top: 12vh;
-  margin-left: 5vh;
+.album-picture {
+  width: 100%;
+  height: 50%;
 }
-
-body > main > div > div.top::before {
-  content: "";
-  background-image: url("/images/Q+AL\ Live\ Around\ The\ World\ \(1\).jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+.album-picture-pic {
+  object-fit: contain;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  height: 80%;
+  z-index: 0;
+  filter: brightness(0.6);
+}
 
-  filter: brightness(50%);
+.album-songs {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  background: linear-gradient(180deg, rgb(65, 64, 64) 10%, rgb(19, 18, 18) 50%);
+  width: 100%;
   height: 60%;
 }
 
-#bottom-div > div > button {
-  width: 15vh;
-  height: 5vh;
-  margin-top: 4vh;
-}
-
-#bottom-div > div > button.btn.bg-transparent.border-none.text-light {
-  transform: translateX(-30px) translateY(-9px);
-
-  font-size: x-large;
+body > main > div > div.album-songs > div.row.ml-5 {
+  width: 75%;
 }
