@@ -11,8 +11,13 @@ h2 {
 }
 .small-card {
     display: flex;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.075);
     height: 5em;
+
+    transition: background 250ms ease-in-out;
+
+    position: relative;
+    align-items: center;
 }
 
 .small-card .img {
@@ -31,16 +36,48 @@ h2 {
     padding: 1em;
 }
 
-.big-card img {
+.small-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.small-card > span,
+.big-card > span {
+    position: absolute;
+    display: inline-block;
+    right: -0.5em;
+    top: 50%;
+    transform: translateY(-50%) scale(0.5);
+
+    opacity: 0;
+
+    color: black;
+
+    transition: opacity 250ms ease-in-out;
+}
+.small-card:hover > span,
+.big-card:hover > span {
+    opacity: 1;
+}
+.small-card > span i:first-child,
+.big-card > span i:first-child {
+    color: #1ed760;
+}
+.small-card > span i:last-child,
+.big-card > span i:last-child {
+    transform: scale(0.75);
+}
+ .big-card img {
     text-align: center;
     object-fit: cover;
 }
 
 .big-card {
-    background-color: #181818;
+    background-color: rgb(24, 24, 24);
     padding: 1em;
     min-height: 15em;
+    position: relative;
 }
+
 .big-card .img {
     text-align: center;
     width: 100%;
