@@ -20,6 +20,7 @@ h2 {
     align-items: center;
 
     border-radius: 0.3em;
+    cursor: pointer;
 }
 
 .small-card .img {
@@ -54,11 +55,16 @@ h2 {
 
     color: black;
 
-    transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+    cursor: default;
 }
 .small-card:hover > span,
 .big-card:hover > span {
     opacity: 1;
+}
+.small-card > span:hover,
+.big-card > span:hover {
+    transform: translateY(-50%) scale(0.55);
 }
 .small-card > span i:first-child,
 .big-card > span i:first-child {
