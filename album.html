@@ -516,10 +516,13 @@
         listOfsong.tracks.data.forEach((song, index) => {
           const songli = document.createElement("li");
           songli.classList.add("list-album");
-          songli.addEventListener("click", setPlayerImage);
-          songli.addEventListener("click", setPlayerTitle);
-          songli.addEventListener("click", setPlayerSubtitle);
-          songli.addEventListener("click", setPlayerProgress);
+          songli.addEventListener("click", setPlayerImage(listOfsong.cover));
+          songli.addEventListener("click", setPlayerTitle(song.title));
+          songli.addEventListener(
+            "click",
+            setPlayerSubtitle(listOfsong.artist.name)
+          );
+          songli.addEventListener("click", setPlayerProgress(song.duration));
 
           songli.innerHTML += `<div class="list-left-side">
                   <div>${index + 1}</div>
