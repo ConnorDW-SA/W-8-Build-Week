@@ -77,7 +77,6 @@ nav .user img {
 .content {
     flex-grow: 1;
     overflow-y: scroll;
-    margin-bottom: 5em;
 }
 
 a {
