@@ -1,0 +1,45 @@
+body > main > div > div.container-fluid > nav {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+body > main > div > div.container-fluid {
+  height: 35%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-text {
+  height: 65%;
+  background: linear-gradient(180deg, rgb(65, 64, 64) 10%, rgb(19, 18, 18) 50%);
+  font-size: smaller;
+}
+
+body > main > div > div.content-text > div > img {
+  padding: 0;
+}
+
+body > aside > div > ul > li:nth-child(6) {
+  font-size: 0.8rem;
+}
+
+body > main > div > div.container-fluid > img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 0;
+  filter: brightness(0.6);
+}
+
+body > aside > div > ul > li.nav-item.text-truncate {
+  line-height: 1.2;
+}
+
+#playing-gif {
+  height: 16px;
+  width: 32px;
+  background: none;
+  padding-right: 10px;
+}
