@@ -1,3 +1,5 @@
+const opts = {};
+
 const request = {
     get: (url) => {
         return new Promise((resolve, reject) => {
