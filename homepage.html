@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="player.css" />
         <link rel="stylesheet" href="homepage.css" />
 
-        <title>{page} - Spotify</title>
+        <title>Queen - Spotify</title>
     </head>
     <body class="body">
         <div class="primary">
@@ -42,7 +42,7 @@
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
                             <a
-                                href="#"
+                                href="homepage.html"
                                 class="nav-link active"
                                 aria-current="page"
                             >
@@ -51,13 +51,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" aria-current="page">
+                            <a
+                                href="#"
+                                class="nav-link"
+                                aria-current="page"
+                                id="search"
+                            >
                                 <i class="fa-solid fa-search"></i>
                                 Search
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" aria-current="page">
+                            <a
+                                href="homepage.html"
+                                class="nav-link"
+                                aria-current="page"
+                            >
                                 <i
                                     class="fa-solid fa-lines-leaning library-icon"
                                 ></i>
@@ -78,257 +87,165 @@
                         </a>
                     </div>
 
+                    <div class="search">
+                        <div class="input">
+                            <i class="fa-solid fa-search"></i>
+                            <input
+                                type="text"
+                                placeholder="What do you want to listen to?"
+                                id="search-bar"
+                            />
+                        </div>
+                    </div>
+
                     <div class="user">
                         <img src="./images/user.png" />
                         John Doe
                     </div>
                 </nav>
                 <div class="content">
-                    <div class="container">
-                        <div class="jumbotron announcement text-center">
-                            <h4 class="display-5">Music For Every Mood!</h4>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3 advert">
-                                        <img
-                                            src="./images/dance-hits.png"
-                                            alt="Dance hits"
-                                            class="img-fluid"
-                                        />
-                                    </div>
-                                    <div class="col-md-3 advert">
-                                        <img
-                                            src="./images/future-hits.png"
-                                            alt="Dance hits"
-                                            class="img-fluid"
-                                        />
-                                    </div>
-                                    <div class="col-md-3 advert">
-                                        <img
-                                            src="./images/tiktok-hits.png"
-                                            alt="Dance hits"
-                                            class="img-fluid"
-                                        />
-                                    </div>
-                                    <div class="col-md-3 advert">
-                                        <img
-                                            src="./images/christmas-hits.png"
-                                            alt="Dance hits"
-                                            class="img-fluid"
-                                        />
+                    <div class="row">
+                        <div class="col-4">
+                            <h4>Top result</h4>
+
+                            <div class="showcase">
+                                <img src="./images/user.png" alt="Song" />
+                                <h3>...</h3>
+                                <div class="details">
+                                    <a href="artist.html?artist_id=">...</a>
+                                    <span class="badge">SONG</span>
+                                </div>
+
+                                <span
+                                    class="fa-stack fa-3x"
+                                    data-action="play"
+                                    data-song=""
+                                >
+                                    <i
+                                        class="fa-solid fa-circle fa-stack-2x"
+                                    ></i>
+
+                                    <i class="fa-solid fa-play fa-stack-1x"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <h4>Songs</h4>
+                            <div class="song-list" id="songs">
+                                <div
+                                    class="spinner-border text-success"
+                                    role="status"
+                                >
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                                <!-- <div class="song">
+                                    <img
+                                        src="./images/song-img.png"
+                                        alt="Song"
+                                    />
+                                    <div class="details">
+                                        <h4>calm down</h4>
+                                        <a href="artist.html?artist_id="
+                                            >SuiSai, Lil Skele</a
+                                        >
                                     </div>
                                 </div>
+                                <div class="song">
+                                    <img
+                                        src="./images/song-img.png"
+                                        alt="Song"
+                                    />
+                                    <div class="details">
+                                        <h4>calm down</h4>
+                                        <a href="artist.html?artist_id="
+                                            >SuiSai, Lil Skele</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="song">
+                                    <img
+                                        src="./images/song-img.png"
+                                        alt="Song"
+                                    />
+                                    <div class="details">
+                                        <h4>calm down</h4>
+                                        <a href="artist.html?artist_id="
+                                            >SuiSai, Lil Skele</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="song">
+                                    <img
+                                        src="./images/song-img.png"
+                                        alt="Song"
+                                    />
+                                    <div class="details">
+                                        <h4>calm down</h4>
+                                        <a href="artist.html?artist_id="
+                                            >SuiSai, Lil Skele</a
+                                        >
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Artists</h4>
 
-                    <h2>Good Morning</h2>
-                    <div class="good-morning">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="small-card">
-                                    <div class="img">
-                                        <img
-                                            src="./images/small-card.png"
-                                            alt="Small card image"
-                                        />
+                            <div class="row" id="artists">
+                                <div class="col-12">
+                                    <div
+                                        class="spinner-border text-success"
+                                        role="status"
+                                    >
+                                        <span class="sr-only">Loading...</span>
                                     </div>
-                                    <div class="text">
-                                        <h6>Burning Jazz-rock Fusion</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
-
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
                                 </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="small-card">
-                                    <div class="img">
+                                <!-- <div class="col-md-2">
+                                    <div class="big-card artist">
                                         <img
-                                            src="./images/small-card.png"
-                                            alt="Small card image"
+                                            src="./images/big-card.png"
+                                            alt=""
                                         />
-                                    </div>
-                                    <div class="text">
-                                        <h6>Burning Jazz-rock Fusion</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
 
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="small-card">
-                                    <div class="img">
-                                        <img
-                                            src="./images/small-card.png"
-                                            alt="Small card image"
-                                        />
+                                        <h4>SuiSai, Lil Skele</h4>
+                                        <h5>Artist</h5>
                                     </div>
-                                    <div class="text">
-                                        <h6>Burning Jazz-rock Fusion</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
-
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
-                    <hr />
-                    <h2>Recently played</h2>
-                    <div class="recently-played">
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <div class="big-card">
-                                    <div class="img">
+                    <br />
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Albums</h4>
+                            <div class="row" id="albums">
+                                <div class="col-12">
+                                    <div
+                                        class="spinner-border text-success"
+                                        role="status"
+                                    >
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-2">
+                                    <div class="big-card album">
                                         <img
                                             src="./images/big-card.png"
-                                            alt="Big Card image"
+                                            alt=""
                                         />
-                                    </div>
-                                    <div class="text">
-                                        <h6>Liked Songs</h6>
-                                        <p>Optional text</p>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
 
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="big-card">
-                                    <div class="img">
-                                        <img
-                                            src="./images/big-card.png"
-                                            alt="Big Card image"
-                                        />
+                                        <h4>compilation 3</h4>
+                                        <h5>
+                                            2019,
+                                            <a href="artist.html?artist_id="
+                                                >SuiSai, Lil Skele</a
+                                            >
+                                        </h5>
                                     </div>
-                                    <div class="text">
-                                        <h6>Liked Songs</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
-
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="big-card">
-                                    <div class="img">
-                                        <img
-                                            src="./images/big-card.png"
-                                            alt="Big Card image"
-                                        />
-                                    </div>
-                                    <div class="text">
-                                        <h6>Liked Songs</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
-
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="big-card">
-                                    <div class="img">
-                                        <img
-                                            src="./images/big-card.png"
-                                            alt="Big Card image"
-                                        />
-                                    </div>
-                                    <div class="text">
-                                        <h6>Liked Songs</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
-
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="big-card">
-                                    <div class="img">
-                                        <img
-                                            src="./images/big-card.png"
-                                            alt="Big Card image"
-                                        />
-                                    </div>
-                                    <div class="text">
-                                        <h6>Liked Songs</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
-
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="big-card">
-                                    <div class="img">
-                                        <img
-                                            src="./images/big-card.png"
-                                            alt="Big Card image"
-                                        />
-                                    </div>
-                                    <div class="text">
-                                        <h6>Liked Songs</h6>
-                                    </div>
-                                    <span class="fa-stack fa-3x">
-                                        <i
-                                            class="fa-solid fa-circle fa-stack-2x"
-                                        ></i>
-
-                                        <i
-                                            class="fa-solid fa-play fa-stack-1x"
-                                        ></i>
-                                    </span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -337,10 +254,10 @@
         </div>
         <div class="player">
             <div class="song">
-                <img src="./images/song-img.png" alt="Song image" />
+                <img src="./images/user.png" alt="Song image" />
                 <div class="text">
-                    <h3>calm down</h3>
-                    <h4>SuiSai, Lil Skele</h4>
+                    <h3>...</h3>
+                    <h4>...</h4>
                 </div>
                 <div class="like">
                     <i class="fa-regular fa-heart"></i>

@@ -9,110 +9,169 @@
 h2 {
     margin-bottom: 0.5em;
 }
-.small-card {
+
+.search {
     display: flex;
-    background: rgba(255, 255, 255, 0.075);
-    height: 5em;
-
-    transition: background 250ms ease-in-out;
-
-    position: relative;
     align-items: center;
-
-    border-radius: 0.3em;
-    cursor: pointer;
+    width: 25%;
 }
 
-.small-card .img {
-    height: 5em;
-    width: 5em;
-    object-fit: cover;
-    aspect-ratio: 1/1;
-}
-.small-card img {
-    height: 100%;
+.search .input {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 0.5em;
+    border-radius: 3em;
     width: 100%;
-    object-fit: cover;
 }
-.small-card .text {
-    flex-grow: 1;
-    padding: 1em;
-}
-
-.small-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.small-card > span,
-.big-card > span {
-    position: absolute;
-    display: inline-block;
-    right: -0.5em;
-    top: 50%;
-    transform: translateY(-50%) scale(0.5);
-
-    opacity: 0;
-
+.search .input i {
     color: black;
+    margin-right: 0.5em;
+}
 
-    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
-    cursor: default;
+.search .input input {
+    border: 0;
+    background-color: transparent;
+    height: calc(4em - 2em);
+    font-size: 0.75em;
+    width: 100%;
 }
-.small-card:hover > span,
-.big-card:hover > span {
-    opacity: 1;
-}
-.small-card > span:hover,
-.big-card > span:hover {
-    transform: translateY(-50%) scale(0.55);
-}
-.small-card > span i:first-child,
-.big-card > span i:first-child {
-    color: #1ed760;
-}
-.small-card > span i:last-child,
-.big-card > span i:last-child {
-    transform: scale(0.75);
-}
- .big-card img {
-    text-align: center;
-    object-fit: cover;
+
+.search .input input:focus {
+    border: 0;
+    outline: 0;
 }
 
 .big-card {
-    background-color: rgb(24, 24, 24);
-    padding: 1em;
-    min-height: 15em;
+    display: block;
+    text-decoration: none !important;
+    margin-bottom: 1.5em;
+}
+
+.showcase,
+.big-card {
+    background-color: #181818;
+    padding: 1.25em;
+    border-radius: 0.5em;
     position: relative;
-    border-radius: 0.3em;
+
+    overflow: hidden;
+
+    transition: background-color 200ms ease-in-out;
 }
 
-.big-card .img {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-
-    margin-bottom: 1em;
-    border-radius: 0.25em;
+.showcase img {
+    height: 92px;
+    border-radius: 0.5em;
+    margin-bottom: 1.25em;
 }
 
-.big-card .text p {
-    color: rgba(252, 252, 252, 0.473);
-    font-size: 0.8em;
+.showcase .details {
+    display: flex;
+    align-items: center;
+}
+.showcase a {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1em;
+    margin-right: 1.5em;
 }
 
-.announcement {
-    background-color: black;
+.showcase .badge {
+    background: #141414;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 5em;
+    font-size: 0.75em;
 }
 
-.announcement h4 {
-    margin-bottom: 1em;
-}
+.showcase .fa-stack {
+    position: absolute;
+    right: -0.25em;
+    bottom: -0.1em;
 
-.advert {
-    transition: transform 200ms ease-in-out;
+    transform: scale(0.5);
+    opacity: 0;
+
+    transition: opacity 200ms ease-in-out, bottom 300ms ease-in-out;
     cursor: pointer;
 }
-.advert:hover {
-    transform: scale(1.1);
+
+.showcase .fa-stack i:first-child {
+    color: #1ed760;
+}
+.showcase .fa-stack i:last-child {
+    transform: scale(0.8);
+    color: black;
+}
+
+.showcase:hover,
+.big-card:hover {
+    background-color: #252525;
+}
+.showcase:hover .fa-stack {
+    bottom: 0;
+    opacity: 1;
+}
+
+.song-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.song-list > .song {
+    display: flex;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    position: relative;
+    overflow: hidden;
+}
+
+.song-list > .song:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.song-list > .song img {
+    height: 2.75em;
+    margin-right: 1em;
+}
+.song-list > .song .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.song-list > .song .details h4 {
+    font-size: 1em;
+    margin: 0;
+}
+.song-list > .song .details a {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.big-card:hover {
+}
+
+.big-card img {
+    width: 100%;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+}
+
+.big-card h4 {
+    font-size: 1em;
+}
+.big-card h5 {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.big-card h5 a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.big-card.artist img {
+    border-radius: 50%;
 }
