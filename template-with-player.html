@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="commonstyles.css" />
+        <link rel="stylesheet" href="player.css" />
+
+        <title>{page} - Spotify</title>
+    </head>
+    <body class="body">
+        <div class="primary">
+            <aside class="sidebar">
+                <div class="d-flex flex-column flex-shrink-0 p-3">
+                    <a
+                        href="#"
+                        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none brand"
+                    >
+                        <i class="fa-brands fa-spotify"></i>
+                    </a>
+                    <hr />
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a
+                                href="#"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                <i class="fa-solid fa-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" aria-current="page">
+                                <i class="fa-solid fa-search"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" aria-current="page">
+                                <i
+                                    class="fa-solid fa-lines-leaning library-icon"
+                                ></i>
+                                Your Library
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main>
+                <nav>
+                    <div class="navigation-buttons">
+                        <a href="#">
+                            <i class="fa-solid fa-chevron-left"></i
+                        ></a>
+                        <a href="#">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="user">
+                        <img src="./images/user.png" />
+                        John Doe
+                    </div>
+                </nav>
+                <div class="content">
+                    <h1>Main content</h1>
+                </div>
+            </main>
+        </div>
+
+        <div class="player">
+            <div class="song">
+                <img src="./images/song-img.png" alt="Song image" />
+                <div class="text">
+                    <h3>calm down</h3>
+                    <h4>SuiSai, Lil Skele</h4>
+                </div>
+                <div class="like">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="buttons">
+                    <i class="fa-solid fa-shuffle button"></i
+                    ><i class="fa-solid fa-backward-step button"></i>
+                    <span class="fa-stack fa-1x pause button">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+
+                        <i class="fa-solid fa-play fa-stack-1x"></i> </span
+                    ><i class="fa-solid fa-forward-step button"></i
+                    ><i class="fa-solid fa-repeat button"></i>
+                </div>
+                <div class="playback-bar">
+                    <div class="playback-position">0:10</div>
+                    <div class="playback-progressbar">
+                        <div
+                            class="progress--bar"
+                            style="--progress-bar-width: 10%"
+                        >
+                            <div class="progress--bar-bg">
+                                <div class="bg">
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playback-duration">3:10</div>
+                </div>
+            </div>
+            <div class="actions">
+                <i class="fa-solid fa-list"></i
+                ><i class="fa-solid fa-computer"></i
+                ><i class="fa-solid fa-volume-high"></i>
+
+                <div class="volume-bar">
+                    <div class="progress--bar">
+                        <div class="progress--bar-bg">
+                            <div class="bg"></div>
+                            <div class="fg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
