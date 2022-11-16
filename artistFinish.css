@@ -1,9 +1,11 @@
 body > main > div > div.container-fluid > nav {
   background-color: rgba(0, 0, 0, 0);
+  position: relative;
+  z-index: 1;
 }
 
 body > main > div > div.container-fluid {
-  height: 35%;
+  height: 40%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -12,7 +14,7 @@ body > main > div > div.container-fluid {
 }
 
 .content-text {
-  height: 65%;
+  height: 60%;
   background: linear-gradient(180deg, rgb(65, 64, 64) 10%, rgb(19, 18, 18) 50%);
   font-size: smaller;
 }
@@ -27,7 +29,8 @@ body > aside > div > ul > li:nth-child(6) {
 
 body > main > div > div.container-fluid > img {
   width: 100%;
-  height: auto;
+  height: 320%;
+  object-fit: cover;
   position: absolute;
   z-index: 0;
   filter: brightness(0.6);
@@ -42,4 +45,9 @@ body > aside > div > ul > li.nav-item.text-truncate {
   width: 32px;
   background: none;
   padding-right: 10px;
+}
+
+body > main > div > div.container-fluid > div {
+  position: relative;
+  z-index: 1;
 }
