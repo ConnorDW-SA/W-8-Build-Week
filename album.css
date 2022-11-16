@@ -172,7 +172,9 @@ nav{
     background-color: transparent;
     position: sticky;
 
-    top: 20px;
+    top: 13px;
+    padding-top: 0px;
+    padding-bottom: 23px;
     z-index: 2;
 }
 
