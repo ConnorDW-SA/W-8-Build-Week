@@ -23,291 +23,372 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="commonstyles.css" />
+        <link rel="stylesheet" href="player.css" />
         <link rel="stylesheet" href="homepage.css" />
 
         <title>{page} - Spotify</title>
     </head>
-    <body>
-        <aside class="sidebar">
-            <div class="d-flex flex-column flex-shrink-0 p-3">
-                <a
-                    href="#"
-                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none brand"
-                >
-                    <i class="fa-brands fa-spotify"></i>
-                </a>
-                <hr />
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
-                            <i class="fa-solid fa-house"></i>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" aria-current="page">
-                            <i class="fa-solid fa-search"></i>
-                            Search
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" aria-current="page">
-                            <i
-                                class="fa-solid fa-lines-leaning library-icon"
-                            ></i>
-                            Your Library
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-        <main>
-            <nav>
-                <div class="navigation-buttons">
-                    <a href="#"> <i class="fa-solid fa-chevron-left"></i></a>
-                    <a href="#">
-                        <i class="fa-solid fa-chevron-right"></i>
+    <body class="body">
+        <div class="primary">
+            <aside class="sidebar">
+                <div class="d-flex flex-column flex-shrink-0 p-3">
+                    <a
+                        href="#"
+                        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none brand"
+                    >
+                        <i class="fa-brands fa-spotify"></i>
                     </a>
+                    <hr />
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a
+                                href="#"
+                                class="nav-link active"
+                                aria-current="page"
+                            >
+                                <i class="fa-solid fa-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" aria-current="page">
+                                <i class="fa-solid fa-search"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" aria-current="page">
+                                <i
+                                    class="fa-solid fa-lines-leaning library-icon"
+                                ></i>
+                                Your Library
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+            </aside>
+            <main>
+                <nav>
+                    <div class="navigation-buttons">
+                        <a href="#">
+                            <i class="fa-solid fa-chevron-left"></i
+                        ></a>
+                        <a href="#">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
 
-                <div class="user">
-                    <img src="./images/user.png" />
-                    John Doe
-                </div>
-            </nav>
-            <div class="content">
-                <div class="container">
-                    <div class="jumbotron announcement text-center">
-                        <h4 class="display-5">Music For Every Mood!</h4>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-3 advert">
-                                    <img
-                                        src="./images/dance-hits.png"
-                                        alt="Dance hits"
-                                        class="img-fluid"
-                                    />
+                    <div class="user">
+                        <img src="./images/user.png" />
+                        John Doe
+                    </div>
+                </nav>
+                <div class="content">
+                    <div class="container">
+                        <div class="jumbotron announcement text-center">
+                            <h4 class="display-5">Music For Every Mood!</h4>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 advert">
+                                        <img
+                                            src="./images/dance-hits.png"
+                                            alt="Dance hits"
+                                            class="img-fluid"
+                                        />
+                                    </div>
+                                    <div class="col-md-3 advert">
+                                        <img
+                                            src="./images/future-hits.png"
+                                            alt="Dance hits"
+                                            class="img-fluid"
+                                        />
+                                    </div>
+                                    <div class="col-md-3 advert">
+                                        <img
+                                            src="./images/tiktok-hits.png"
+                                            alt="Dance hits"
+                                            class="img-fluid"
+                                        />
+                                    </div>
+                                    <div class="col-md-3 advert">
+                                        <img
+                                            src="./images/christmas-hits.png"
+                                            alt="Dance hits"
+                                            class="img-fluid"
+                                        />
+                                    </div>
                                 </div>
-                                <div class="col-md-3 advert">
-                                    <img
-                                        src="./images/future-hits.png"
-                                        alt="Dance hits"
-                                        class="img-fluid"
-                                    />
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Good Morning</h2>
+                    <div class="good-morning">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/small-card.png"
+                                            alt="Small card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Burning Jazz-rock Fusion</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
                                 </div>
-                                <div class="col-md-3 advert">
-                                    <img
-                                        src="./images/tiktok-hits.png"
-                                        alt="Dance hits"
-                                        class="img-fluid"
-                                    />
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/small-card.png"
+                                            alt="Small card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Burning Jazz-rock Fusion</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
                                 </div>
-                                <div class="col-md-3 advert">
-                                    <img
-                                        src="./images/christmas-hits.png"
-                                        alt="Dance hits"
-                                        class="img-fluid"
-                                    />
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/small-card.png"
+                                            alt="Small card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Burning Jazz-rock Fusion</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <h2>Recently played</h2>
+                    <div class="recently-played">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="big-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/big-card.png"
+                                            alt="Big Card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Liked Songs</h6>
+                                        <p>Optional text</p>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="big-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/big-card.png"
+                                            alt="Big Card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Liked Songs</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="big-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/big-card.png"
+                                            alt="Big Card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Liked Songs</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="big-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/big-card.png"
+                                            alt="Big Card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Liked Songs</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="big-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/big-card.png"
+                                            alt="Big Card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Liked Songs</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="big-card">
+                                    <div class="img">
+                                        <img
+                                            src="./images/big-card.png"
+                                            alt="Big Card image"
+                                        />
+                                    </div>
+                                    <div class="text">
+                                        <h6>Liked Songs</h6>
+                                    </div>
+                                    <span class="fa-stack fa-3x">
+                                        <i
+                                            class="fa-solid fa-circle fa-stack-2x"
+                                        ></i>
+
+                                        <i
+                                            class="fa-solid fa-play fa-stack-1x"
+                                        ></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </main>
+        </div>
+        <div class="player">
+            <div class="song">
+                <img src="./images/song-img.png" alt="Song image" />
+                <div class="text">
+                    <h3>calm down</h3>
+                    <h4>SuiSai, Lil Skele</h4>
+                </div>
+                <div class="like">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="buttons">
+                    <i class="fa-solid fa-shuffle button"></i
+                    ><i class="fa-solid fa-backward-step button"></i>
+                    <span class="fa-stack fa-1x pause button">
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
 
-                <h2>Good Morning</h2>
-                <div class="good-morning">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="small-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/small-card.png"
-                                        alt="Small card image"
-                                    />
+                        <i class="fa-solid fa-play fa-stack-1x"></i> </span
+                    ><i class="fa-solid fa-forward-step button"></i
+                    ><i class="fa-solid fa-repeat button"></i>
+                </div>
+                <div class="playback-bar">
+                    <div class="playback-position">0:10</div>
+                    <div class="playback-progressbar">
+                        <div
+                            class="progress--bar"
+                            style="--progress-bar-width: 10%"
+                        >
+                            <div class="progress--bar-bg">
+                                <div class="bg">
+                                    <div class="bar"></div>
                                 </div>
-                                <div class="text">
-                                    <h6>Burning Jazz-rock Fusion</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="small-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/small-card.png"
-                                        alt="Small card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Burning Jazz-rock Fusion</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="small-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/small-card.png"
-                                        alt="Small card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Burning Jazz-rock Fusion</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
                             </div>
                         </div>
                     </div>
+                    <div class="playback-duration">3:10</div>
                 </div>
-                <hr />
-                <h2>Recently played</h2>
-                <div class="recently-played">
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <div class="big-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/big-card.png"
-                                        alt="Big Card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Liked Songs</h6>
-                                    <p>Optional text</p>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
+            </div>
+            <div class="actions">
+                <i class="fa-solid fa-list"></i
+                ><i class="fa-solid fa-computer"></i
+                ><i class="fa-solid fa-volume-high"></i>
 
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="big-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/big-card.png"
-                                        alt="Big Card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Liked Songs</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="big-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/big-card.png"
-                                        alt="Big Card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Liked Songs</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="big-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/big-card.png"
-                                        alt="Big Card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Liked Songs</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="big-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/big-card.png"
-                                        alt="Big Card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Liked Songs</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="big-card">
-                                <div class="img">
-                                    <img
-                                        src="./images/big-card.png"
-                                        alt="Big Card image"
-                                    />
-                                </div>
-                                <div class="text">
-                                    <h6>Liked Songs</h6>
-                                </div>
-                                <span class="fa-stack fa-3x">
-                                    <i
-                                        class="fa-solid fa-circle fa-stack-2x"
-                                    ></i>
-
-                                    <i class="fa-solid fa-play fa-stack-1x"></i>
-                                </span>
-                            </div>
+                <div class="volume-bar">
+                    <div class="progress--bar">
+                        <div class="progress--bar-bg">
+                            <div class="bg"></div>
+                            <div class="fg"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

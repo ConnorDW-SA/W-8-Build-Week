@@ -2,10 +2,10 @@
 
 .primary {
     width: 100%;
-    height: 100%;
     display: flex;
 
     justify-content: space-between;
+    height: calc(100% - 7em);
 }
 .body {
     display: flex;
