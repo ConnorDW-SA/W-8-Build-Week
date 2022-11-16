@@ -522,9 +522,7 @@
                 }</div>
               </div>`;
         listOfsong.tracks.data.forEach((song, index) => {
-album-connecting-js
           let dd = song.duration;
- main
           const songli = document.createElement("li");
           songli.classList.add("list-album");
           /* songli.addEventListener(
@@ -547,7 +545,9 @@ album-connecting-js
                     <div>${listOfsong.artist.name}</div>
                   </div>
                 </div>
-                <div>${(dd - (dd %= 60)) / 60 + (9 < dd ? ":" : ":0") + dd}</div>`;
+                <div>${
+                  (dd - (dd %= 60)) / 60 + (9 < dd ? ":" : ":0") + dd
+                }</div>`;
           console.log(songli);
 
           list.appendChild(songli);
