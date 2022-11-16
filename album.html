@@ -24,6 +24,8 @@
     />
     <link rel="stylesheet" href="commonstyles.css" />
     <link rel="stylesheet" href="album.css" />
+    <link rel="stylesheet" href="player.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -34,341 +36,394 @@
 
     <title>{page} - Spotify</title>
   </head>
-  <body>
-    <aside class="sidebar">
-      <div class="d-flex flex-column flex-shrink-0 p-3">
-        <a
-          href="#"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none brand"
-        >
-          <i class="fa-brands fa-spotify"></i>
-        </a>
-        <hr />
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-              <i class="fa-solid fa-house"></i>
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link" aria-current="page">
-              <i class="fa-solid fa-search"></i>
-              Search
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link" aria-current="page">
-              <i class="fa-solid fa-list"></i>
-              Your Library
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
-    <main>
-      <nav>
-        <div id="background-nav"></div>
-        <div class="navigation-buttons">
-          <div>
-            <a href="#"> <i class="fa-solid fa-chevron-left"></i></a>
-          </div>
-          <div>
-            <a href="#">
-              <i class="fa-solid fa-chevron-right"></i>
-            </a>
-          </div>
+  <body class="body">
+    <div class="primary">
+      <aside class="sidebar">
+        <div class="d-flex flex-column flex-shrink-0 p-3">
+          <a
+            href="#"
+            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none brand"
+          >
+            <i class="fa-brands fa-spotify"></i>
+          </a>
+          <hr />
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link active" aria-current="page">
+                <i class="fa-solid fa-house"></i>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" aria-current="page">
+                <i class="fa-solid fa-search"></i>
+                Search
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" aria-current="page">
+                <i class="fa-solid fa-list"></i>
+                Your Library
+              </a>
+            </li>
+          </ul>
         </div>
-        <div id="right-side-navbar">
-          <div class="user">
-            <div><img src="./images/user.png" /></div>
-            <div>John Doe</div>
-            <div id="dropdown-album" onclick="dropdown(event)">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-caret-down-fill"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                />
-              </svg>
-              <div class="dropdown-album" id="c-d-r">
-                <div class="row drop-list-song">
-                  <div class="col-8">Account</div>
-                  <div class="col-2">
-                    <a href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="row drop-list-song">
-                  <div class="col-8">Profile</div>
-                  <div class="col-2">
-                    <a href=""> </a>
-                  </div>
-                </div>
-                <div class="row drop-list-song">
-                  <div class="col-10">Do upgrade</div>
-                  <div class="col-2">
-                    <a href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="row drop-list-song">
-                  <div class="col-8">Assistance</div>
-                  <div class="col-2">
-                    <a href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="row drop-list-song">
-                  <div class="col-8">Download</div>
-                  <div class="col-2">
-                    <a href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="row drop-list-song">
-                  <div class="col-8">Settings</div>
-                  <div class="col-2">
-                    <a href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <hr class="hrr" />
-
-                <div class="row drop-list-song">
-                  <div class="col-4">Exit</div>
-                  <div class="col-2">
-                    <a href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
+      </aside>
+      <main>
+        <nav>
+          <div id="background-nav"></div>
+          <div class="navigation-buttons">
+            <div>
+              <a href="#"> <i class="fa-solid fa-chevron-left"></i></a>
+            </div>
+            <div>
+              <a href="#">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
             </div>
           </div>
-        </div>
-      </nav>
-      <div class="content">
-        <div id="album-header">
-          <div id="cover-black"></div>
-          <div class="row" id="album-title-image">
-            <div class="col-12 col-md-4 col-lg-3" id="album-image">
-              <img
-                src="https://th.bing.com/th/id/R.a2f49ea2346ade619ae7d782dd9f0724?rik=Le%2fIgHdoQ%2f%2bJtQ&riu=http%3a%2f%2fthatgrapejuice.net%2fwp-content%2fuploads%2f2018%2f04%2fcardi-b-tracklist-invasion-of-privacy-tgj-600x600.jpg&ehk=X4s%2b%2bJrijOhD6kU2GyXFZAwb%2fTnpoTsLWI4tuwBwZFE%3d&risl=&pid=ImgRaw&r=0"
-                alt="album-image"
-                id="header-img"
-              />
-            </div>
-            <div class="col-12 col-md-8 col-lg-8" id="album-title"></div>
-          </div>
-        </div>
-        <div id="bigger-container">
-          <!--<div class="paper-plane"></div>-->
-          <div id="background-pink"></div>
-
-          <div id="inner-top-container">
-            <div id="play-button">
-              <div id="play-symbol"></div>
-            </div>
-            <div onclick="like(event)" id="faheart">
-              <i class="fa-regular fa-heart"></i>
-            </div>
-
-            <div id="settings" onclick="setting(event)">
-              <i class="fa-solid fa-ellipsis"> </i>
-
-              <div class="dropdown-settings" id="appear">
-                <div class="row">
-                  <div class="col-4">Follow</div>
-                  <div class="col-2">
-                    <a href=""> </a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-10">Go to Artist page</div>
-                  <div class="col-2">
-                    <a href=""> </a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-4">Link</div>
-                  <div class="col-2">
-                    <a href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-4">Share</div>
-                  <div class="col-2">
-                    <a href=""><i class="fa-solid fa-caret-right"></i> </a>
-                  </div>
-                </div>
-
-                <hr class="hrr" />
-
-                <div class="row">
-                  <div class="col-12">Open with desktop app</div>
-                  <div class="col-0">
-                    <a href=""> </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="inner-container">
-            <div id="list-song-section">
-              <div id="subtitle">
-                <div>#</div>
-                <div>TITLE</div>
-              </div>
-              <div>
+          <div id="right-side-navbar">
+            <div class="user">
+              <div><img src="./images/user.png" /></div>
+              <div>John Doe</div>
+              <div id="dropdown-album" onclick="dropdown(event)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-clock"
+                  class="bi bi-caret-down-fill"
                   viewBox="0 0 16 16"
                 >
                   <path
-                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
-                  />
-                  <path
-                    d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
                   />
                 </svg>
+                <div class="dropdown-album" id="c-d-r">
+                  <div class="row drop-list-song">
+                    <div class="col-8">Account</div>
+                    <div class="col-2">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-up-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="row drop-list-song">
+                    <div class="col-8">Profile</div>
+                    <div class="col-2">
+                      <a href=""> </a>
+                    </div>
+                  </div>
+                  <div class="row drop-list-song">
+                    <div class="col-10">Do upgrade</div>
+                    <div class="col-2">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-up-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row drop-list-song">
+                    <div class="col-8">Assistance</div>
+                    <div class="col-2">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-up-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row drop-list-song">
+                    <div class="col-8">Download</div>
+                    <div class="col-2">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-up-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row drop-list-song">
+                    <div class="col-8">Settings</div>
+                    <div class="col-2">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-up-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <hr class="hrr" />
+
+                  <div class="row drop-list-song">
+                    <div class="col-4">Exit</div>
+                    <div class="col-2">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-up-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <hr id="hr" />
-            <ul id="ordered-list-album"></ul>
+          </div>
+        </nav>
+        <div class="content">
+          <div id="album-header">
+            <div id="cover-black"></div>
+            <div class="row" id="album-title-image">
+              <div class="col-12 col-md-4 col-lg-3" id="album-image">
+                <img
+                  src="https://th.bing.com/th/id/R.a2f49ea2346ade619ae7d782dd9f0724?rik=Le%2fIgHdoQ%2f%2bJtQ&riu=http%3a%2f%2fthatgrapejuice.net%2fwp-content%2fuploads%2f2018%2f04%2fcardi-b-tracklist-invasion-of-privacy-tgj-600x600.jpg&ehk=X4s%2b%2bJrijOhD6kU2GyXFZAwb%2fTnpoTsLWI4tuwBwZFE%3d&risl=&pid=ImgRaw&r=0"
+                  alt="album-image"
+                  id="header-img"
+                />
+              </div>
+              <div class="col-12 col-md-8 col-lg-8" id="album-title"></div>
+            </div>
+          </div>
+          <div id="bigger-container">
+            <!--<div class="paper-plane"></div>-->
+            <div id="background-pink"></div>
+
+            <div id="inner-top-container">
+              <div id="play-button">
+                <div id="play-symbol"></div>
+              </div>
+              <div onclick="like(event)" id="faheart">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+
+              <div id="settings" onclick="setting(event)">
+                <i class="fa-solid fa-ellipsis"> </i>
+
+                <div class="dropdown-settings" id="appear">
+                  <div class="row">
+                    <div class="col-4">Follow</div>
+                    <div class="col-2">
+                      <a href=""> </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-10">Go to Artist page</div>
+                    <div class="col-2">
+                      <a href=""> </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Link</div>
+                    <div class="col-2">
+                      <a href=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-box-arrow-up-right"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">Share</div>
+                    <div class="col-2">
+                      <a href=""><i class="fa-solid fa-caret-right"></i> </a>
+                    </div>
+                  </div>
+
+                  <hr class="hrr" />
+
+                  <div class="row">
+                    <div class="col-12">Open with desktop app</div>
+                    <div class="col-0">
+                      <a href=""> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="inner-container">
+              <div id="list-song-section">
+                <div id="subtitle">
+                  <div>#</div>
+                  <div>TITLE</div>
+                </div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <hr id="hr" />
+              <ul id="ordered-list-album"></ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="player">
+      <div class="song">
+        <img src="./images/song-img.png" alt="Song image" />
+        <div class="text">
+          <h3>calm down</h3>
+          <h4>SuiSai, Lil Skele</h4>
+        </div>
+        <div class="like">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="buttons">
+          <i class="fa-solid fa-shuffle button"></i
+          ><i class="fa-solid fa-backward-step button"></i>
+          <span class="fa-stack fa-1x pause button">
+            <i class="fa-solid fa-circle fa-stack-2x"></i>
+
+            <i class="fa-solid fa-play fa-stack-1x"></i> </span
+          ><i class="fa-solid fa-forward-step button"></i
+          ><i class="fa-solid fa-repeat button"></i>
+        </div>
+        <div class="playback-bar">
+          <div class="playback-position">0:10</div>
+          <div class="playback-progressbar">
+            <div class="progress--bar" style="--progress-bar-width: 10%">
+              <div class="progress--bar-bg">
+                <div class="bg">
+                  <div class="bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="playback-duration">3:10</div>
+        </div>
+      </div>
+      <div class="actions">
+        <i class="fa-solid fa-list"></i><i class="fa-solid fa-computer"></i
+        ><i class="fa-solid fa-volume-high"></i>
+
+        <div class="volume-bar">
+          <div class="progress--bar">
+            <div class="progress--bar-bg">
+              <div class="bg"></div>
+              <div class="fg"></div>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
     <script>
       const dropdown = function (event) {
@@ -551,6 +606,8 @@
         console.log("HELLO");
       };
     </script>-->
+    <script src="global.js"></script>
+    <script src="player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
