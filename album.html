@@ -74,7 +74,9 @@
           <div id="background-nav"></div>
           <div class="navigation-buttons">
             <div>
-              <a href="#"> <i class="fa-solid fa-chevron-left"></i></a>
+              <a href="homepage.html">
+                <i class="fa-solid fa-chevron-left"></i
+              ></a>
             </div>
             <div>
               <a href="#">
@@ -438,9 +440,11 @@
         getdrop.classList.toggle("dropdown-settings");
         getdrop.classList.add("dropdown-settingss");
       };
+      const params = new URLSearchParams(window.location.search);
+      const albumId = params.get("album_id");
       async function getAlbum() {
         const response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/deezer/album/75621062/",
+          `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`,
           {
             headers: {
               Authorization:
@@ -460,6 +464,8 @@
         let headerPicture = document.querySelector("#album-image");
         headerPicture.innerHTML = `<img alt="image-album" src="${listOfsong.cover}">`;
         let headertitle = document.querySelector("#album-title");
+        let s = listOfsong.duration;
+
         headertitle.innerHTML = `<h6>ALBUM</h6>
               <h1>${listOfsong.title}</h1>
               <div class="row" id="under-main">
@@ -506,16 +512,19 @@
                   </svg>
                 </div>
                 <div>${
+                  /*
                   Math.floor(listOfsong.duration / 60 / 60) +
                   ":" +
                   Math.floor(listOfsong.duration / 60 - 60) +
                   ":" +
                   Math.floor(((listOfsong.duration / 60) % 1) * 60)
+                */ (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s
                 }</div>
               </div>`;
         listOfsong.tracks.data.forEach((song, index) => {
-          let getid = song.title;
-          console.log(getid);
+album-connecting-js
+          let dd = song.duration;
+ main
           const songli = document.createElement("li");
           songli.classList.add("list-album");
           /* songli.addEventListener(
@@ -538,11 +547,7 @@
                     <div>${listOfsong.artist.name}</div>
                   </div>
                 </div>
-                <div>${
-                  Math.floor(song.duration / 60) +
-                  ":" +
-                  Math.floor(((song.duration / 60) % 1) * 60)
-                }</div>`;
+                <div>${(dd - (dd %= 60)) / 60 + (9 < dd ? ":" : ":0") + dd}</div>`;
           console.log(songli);
 
           list.appendChild(songli);
