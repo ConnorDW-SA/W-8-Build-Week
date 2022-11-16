@@ -462,6 +462,8 @@
         let headerPicture = document.querySelector("#album-image");
         headerPicture.innerHTML = `<img alt="image-album" src="${listOfsong.cover}">`;
         let headertitle = document.querySelector("#album-title");
+        let s = listOfsong.duration;
+
         headertitle.innerHTML = `<h6>ALBUM</h6>
               <h1>${listOfsong.title}</h1>
               <div class="row" id="under-main">
@@ -508,14 +510,17 @@
                   </svg>
                 </div>
                 <div>${
+                  /*
                   Math.floor(listOfsong.duration / 60 / 60) +
                   ":" +
                   Math.floor(listOfsong.duration / 60 - 60) +
                   ":" +
                   Math.floor(((listOfsong.duration / 60) % 1) * 60)
+                */ (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s
                 }</div>
               </div>`;
         listOfsong.tracks.data.forEach((song, index) => {
+          let d = song.duration;
           const songli = document.createElement("li");
           songli.classList.add("list-album");
           songli.innerHTML += `<div class="list-left-side">
@@ -525,11 +530,7 @@
                     <div>${listOfsong.artist.name}</div>
                   </div>
                 </div>
-                <div>${
-                  Math.floor(song.duration / 60) +
-                  ":" +
-                  Math.floor(((song.duration / 60) % 1) * 60)
-                }</div>`;
+                <div>${(d - (d %= 60)) / 60 + (9 < d ? ":" : ":0") + d}</div>`;
           console.log(songli);
 
           list.appendChild(songli);
