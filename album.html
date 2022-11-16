@@ -427,6 +427,8 @@
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
+    <script src="global.js"></script>
+    <script src="player.js"></script>
     <script>
       const dropdown = function (event) {
         const getdrop = document.querySelector("#c-d-r");
@@ -520,17 +522,32 @@
                 }</div>
               </div>`;
         listOfsong.tracks.data.forEach((song, index) => {
-          let d = song.duration;
+album-connecting-js
+          let dd = song.duration;
+ main
           const songli = document.createElement("li");
           songli.classList.add("list-album");
+          /* songli.addEventListener(
+            "click",
+            setPlayerImage(`${listOfsong.cover}`)
+          );
+          console.log(setPlayerImage(`${listOfsong.cover}`));
+          songli.addEventListener("click", setPlayerTitle(song.title));
+          console.log(setPlayerTitle(song.title));
+          songli.addEventListener(
+            "click",
+            setPlayerSubtitle(listOfsong.artist.name)
+          ); 
+          songli.addEventListener("click", setPlayerProgress(song.duration));*/
+
           songli.innerHTML += `<div class="list-left-side">
                   <div>${index + 1}</div>
                   <div class="flex-column">
-                    <div>${song.title}</div>
+                    <div class="gettitle">${song.title}</div>
                     <div>${listOfsong.artist.name}</div>
                   </div>
                 </div>
-                <div>${(d - (d %= 60)) / 60 + (9 < d ? ":" : ":0") + d}</div>`;
+                <div>${(dd - (dd %= 60)) / 60 + (9 < dd ? ":" : ":0") + dd}</div>`;
           console.log(songli);
 
           list.appendChild(songli);
@@ -611,8 +628,7 @@
         console.log("HELLO");
       };
     </script>-->
-    <script src="global.js"></script>
-    <script src="player.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
