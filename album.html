@@ -74,7 +74,9 @@
           <div id="background-nav"></div>
           <div class="navigation-buttons">
             <div>
-              <a href="#"> <i class="fa-solid fa-chevron-left"></i></a>
+              <a href="homepage.html">
+                <i class="fa-solid fa-chevron-left"></i
+              ></a>
             </div>
             <div>
               <a href="#">
@@ -436,9 +438,11 @@
         getdrop.classList.toggle("dropdown-settings");
         getdrop.classList.add("dropdown-settingss");
       };
+      const params = new URLSearchParams(window.location.search);
+      const albumId = params.get("album_id");
       async function getAlbum() {
         const response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/deezer/album/75621062/",
+          `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`,
           {
             headers: {
               Authorization:
