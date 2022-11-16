@@ -514,20 +514,27 @@
                 }</div>
               </div>`;
         listOfsong.tracks.data.forEach((song, index) => {
+          let getid = song.title;
+          console.log(getid);
           const songli = document.createElement("li");
           songli.classList.add("list-album");
-          songli.addEventListener("click", setPlayerImage(listOfsong.cover));
+          /* songli.addEventListener(
+            "click",
+            setPlayerImage(`${listOfsong.cover}`)
+          );
+          console.log(setPlayerImage(`${listOfsong.cover}`));
           songli.addEventListener("click", setPlayerTitle(song.title));
+          console.log(setPlayerTitle(song.title));
           songli.addEventListener(
             "click",
             setPlayerSubtitle(listOfsong.artist.name)
-          );
-          songli.addEventListener("click", setPlayerProgress(song.duration));
+          ); 
+          songli.addEventListener("click", setPlayerProgress(song.duration));*/
 
           songli.innerHTML += `<div class="list-left-side">
                   <div>${index + 1}</div>
                   <div class="flex-column">
-                    <div>${song.title}</div>
+                    <div class="gettitle">${song.title}</div>
                     <div>${listOfsong.artist.name}</div>
                   </div>
                 </div>
