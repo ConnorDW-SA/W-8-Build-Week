@@ -49,3 +49,13 @@
   position: relative;
   z-index: 1;
 }
+
+.button-see-more {
+  background: none;
+  color: lightgray;
+  border: none;
+}
+
+div.main-content {
+  overflow-y: hidden;
+}
