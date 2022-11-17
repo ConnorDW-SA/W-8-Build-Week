@@ -73,7 +73,7 @@
         <nav>
           <div id="background-nav"></div>
           <div class="navigation-buttons">
-            <div>
+            <div id="go-back">
               <a href="homepage.html">
                 <i class="fa-solid fa-chevron-left"></i
               ></a>
@@ -430,6 +430,21 @@
     <script src="global.js"></script>
     <script src="player.js"></script>
     <script>
+      function insertUrlParam(key, value) {
+        if (history.pushState) {
+          let searchParams = new URLSearchParams(window.location.search);
+          searchParams.set(key, value);
+          let newurl =
+            window.location.protocol +
+            "//" +
+            window.location.host +
+            window.location.pathname +
+            "?" +
+            searchParams.toString();
+          window.history.pushState({ path: newurl }, "", newurl);
+        }
+      }
+      //insertUrlParam("search", val);
       const dropdown = function (event) {
         const getdrop = document.querySelector("#c-d-r");
         getdrop.classList.toggle("dropdown-album");
@@ -467,88 +482,87 @@
         let s = listOfsong.duration;
 
         headertitle.innerHTML = `<h6>ALBUM</h6>
-              <h1>${listOfsong.title}</h1>
-              <div class="row" id="under-main">
-                <div class="round-border"><img alt="img" src="${
-                  listOfsong.cover_small
-                }"></div>
-                <div>${listOfsong.artist.name}</div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-dot"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                  </svg>
-                </div>
-                <div>${listOfsong.release_date}</div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-dot"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                  </svg>
-                </div>
-                <div>${listOfsong.tracks.data.length} songs,</div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-dot"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                  </svg>
-                </div>
-                <div>${
-                  /*
-                  Math.floor(listOfsong.duration / 60 / 60) +
-                  ":" +
-                  Math.floor(listOfsong.duration / 60 - 60) +
-                  ":" +
-                  Math.floor(((listOfsong.duration / 60) % 1) * 60)
-                */ (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s
-                }</div>
-              </div>`;
+                    <h1>${listOfsong.title}</h1>
+                    <div class="row" id="under-main">
+                      <div class="round-border"><img alt="img" src="${
+                        listOfsong.cover_small
+                      }"></div>
+                      <div>${listOfsong.artist.name}</div>
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-dot"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                      </div>
+                      <div>${listOfsong.release_date}</div>
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-dot"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                      </div>
+                      <div>${listOfsong.tracks.data.length} songs,</div>
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-dot"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                      </div>
+                      <div>${
+                        /*
+                        Math.floor(listOfsong.duration / 60 / 60) +
+                        ":" +
+                        Math.floor(listOfsong.duration / 60 - 60) +
+                        ":" +
+                        Math.floor(((listOfsong.duration / 60) % 1) * 60)
+                      */ (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s
+                      }</div>
+                    </div>`;
         listOfsong.tracks.data.forEach((song, index) => {
           let dd = song.duration;
           const songli = document.createElement("li");
           //songli.classList.add("list-album");
-          songli.addEventListener(
-            "click",
-            setPlayerImage(`${listOfsong.cover}`)
-          );
-          console.log(setPlayerImage(`${listOfsong.cover}`));
+          songli.addEventListener("click", setPlayerImage(listOfsong.cover));
           songli.addEventListener("click", setPlayerTitle(song.title));
           console.log(setPlayerTitle(song.title));
           songli.addEventListener(
             "click",
             setPlayerSubtitle(listOfsong.artist.name)
           ); /*
-          songli.addEventListener("click", setPlayerProgress(song.duration));*/
+                songli.addEventListener("click", setPlayerProgress(song.duration));*/
 
           songli.innerHTML += `
-          <div  onclick="changecolor(event)" class="list-album"><div class="list-left-side">
-                  <div>${index + 1}</div>
-                  <div class="flex-column">
-                    <div class="gettitle">${song.title}</div>
-                    <div>${listOfsong.artist.name}</div>
-                  </div>
-                </div>
-                <div class="time-song">${
-                  (dd - (dd %= 60)) / 60 + (9 < dd ? ":" : ":0") + dd
-                }</div></div>`;
+                <div  onclick="changecolor(event)" class="list-album"><div class="list-left-side">
+                        <div>${index + 1}</div>
+                        <div class="flex-column">
+                          <div class="gettitle">${song.title}</div>
+                          <div>${listOfsong.artist.name}<span class="id">${
+            song.id
+          }</span></div> 
+                        </div>
+                      </div>
+                      <div class="time-song">${
+                        (dd - (dd %= 60)) / 60 + (9 < dd ? ":" : ":0") + dd
+                      }</div></div>
+                     `;
           console.log(songli);
 
           list.appendChild(songli);
@@ -569,12 +583,18 @@
           .querySelector("h3");
         console.log(getTitlePlayer);
         getTitlePlayer.innerHTML = `<div>
-          ${event.currentTarget.querySelector(".gettitle").innerText};
-        </div>`;
+                ${event.currentTarget.querySelector(".gettitle").innerText};
+              </div>`;
         const gettime = document.querySelector(".playback-duration");
         const getnewtime =
           event.currentTarget.querySelector(".time-song").innerText;
         gettime.innerHTML = `<div>${getnewtime}</div>`;
+        const getAnchorTag = document.querySelector("#go-back");
+        const getIdElement = event.currentTarget.querySelector(".id").innerText;
+        console.log(getIdElement);
+        getAnchorTag.innerHTML = `<a href="homepage.html?album_id=32452&artist_id=32534&track_id=${getIdElement}">
+             <i class="fa-solid fa-chevron-left"></i
+          ></a>`;
       };
 
       window.onload = async () => {
