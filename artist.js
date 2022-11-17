@@ -1,18 +1,17 @@
 const urlParams = new URLSearchParams(window.location.search);
 const artist_id = urlParams.get("artist_id");
 const album_id = urlParams.get("album_id");
+
 async function getArtists() {
   const response = await fetch(
     `https://striveschool-api.herokuapp.com/api/deezer/artist/${artist_id}`
   );
   const artist = await response.json();
 
-  $(document).ready(function () {
-    $(".artist-img-large").attr("src", artist.picture_xl);
-    $(".display-artist-name").text(artist.name);
-    $(".artist-pick-name").text(artist.name);
-    $(".artist-pic-tiny").attr("src", artist.picture_small);
-  });
+  $(".artist-img-large").attr("src", artist.picture_xl);
+  $(".display-artist-name").text(artist.name);
+  $(".artist-pick-name").text(artist.name);
+  $(".artist-pic-tiny").attr("src", artist.picture_small);
 }
 
 async function getAlbum() {
@@ -21,33 +20,28 @@ async function getAlbum() {
   );
   const album = await response.json();
 
-  $(document).ready(function () {
-    $(".artist-pick-album-name").text(album.title);
-    document.querySelector(
-      "body > main > div > div.content-text > div.container-fluid > div > div.container.col-2 > div > div.album-picture-small.ml-3 > img"
-    ).src = album.cover_small;
-    $(".album-cover-small").each(function () {
-      this.src = album.cover_small;
-    });
-  });
-}
+  $(".artist-pick-album-name").text(album.title);
+  $(".album-picture-small").attr("src", album.cover_small);
 
-async function getSongs() {
-  const response = await fetch(
-    `https://striveschool-api.herokuapp.com/api/deezer/album/${album_id}`
-  );
-  const album = await response.json();
+  $(".album-cover-small").each(function () {
+    this.src = album.cover_small;
+  });
+
   const songList = album.tracks.data;
   console.log(songList);
-  $(document).ready(function () {
-    $(".track-name-list").each(function (i) {
-      this.innerHTML = songList[i].title;
-    });
+  // const indexPosition = $(".index-selector").index(this);
+  $(".song-list-container").each(function (i) {
+    this.innerHTML += `<div class="row justify-content-between my-4">
+                      
+                       <div class="row ml-5 text-left w-25 index-selector text-truncate"><img class="d-none" id="playing-gif" src="images/playing.gif" /><img
+                      class="mx-3 album-cover-small" src="${album.cover_small}" style="height: 60px" /><span class="mt-2">${songList[i].title}</span></div>
+                      <div class="rank mt-3 text-right w-25 text-truncate">Rank ${songList[i].rank}</div>
+                      <div class="mr-5 mt-3 text-left w-25 text-truncate">${songList[i].duration} seconds</div>
+                      </div>`;
   });
 }
 
 window.onload = () => {
   getArtists();
   getAlbum();
-  getSongs();
 };
