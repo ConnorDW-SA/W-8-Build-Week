@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "GothamMedium";
+    src: URL("./fonts/GothamMedium.ttf") format("truetype");
+}
+
+
+#biggestTopContainer{
+    padding-top: 20px;
+    height: 15vh;
+    margin-inline: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+#biggestTopContainer a{
+    text-align: center;
+}
+#biggestTopContainer h1{
+    margin-left: 5px;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: -3px;
+
+}
+
+#biggestTopContainer i{
+    margin-inline: auto;
+    font-size: 100px;
+    color:black
+
+}
+#beggestbottomContainer div, #beggestbottomContainer hr{
+    margin-block: 1em;
+padding-inline: 6em;
+}
+#beggestbottomContainer hr{
+    margin-inline: 90px;
+}
+#main{
+    text-align: center;
+    display: flex;
+
+    justify-content: center;
+}
+.btn{
+    border-radius: 10em!important;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+#flex-log-in{
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 6em;
+    margin-inline: 0px;
+}
+#flex-log-in div{
+   padding-inline: 0px;
+}
+h3 {
+    font-size: 17px;
+    padding-top: 5px;
+}
+input{
+    width: 100%;
+    height: 3em;
+}
+#remember{
+    width: 1em;
+    height: 1em;
+}
+#flex-remember{
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+}
+#flex-remember label{
+    margin-bottom: 0;
+}
+#white{
+    border: 3px solid gray;
+}/*
+#blue{
+    background-color: rgb(48, 48, 135);
+    color: white;
+}
+#black{
+    background-color: black;
+    color: white;
+}
+
+#green{
+    background-color: rgb(78, 165, 78);
+    color: white;
+}*/
+
+
+@media(max-width: 768px){
+    #biggestTopContainer{
+        height: 8vh;}
+    #biggestTopContainer h1{
+        font-size: 30px;
+    
+    }
+    
+    #biggestTopContainer i{
+        font-size: 50px;
+    
+    }
+    
+    
+}
+@media(max-width: 1150px){
+    #biggestTopContainer h1{
+        font-size: 40px;
+    
+    }
+    #flex-log-in{
+        justify-content: center;
+    }
+    #biggestTopContainer i{
+        font-size: 60px;
+    
+    }
+    #biggestTopContainer{
+        height: 8vh;}
+}
