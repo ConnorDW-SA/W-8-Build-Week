@@ -33,9 +33,8 @@
     cursor: pointer;
 }
 
-.list-album:hover {
-    background-color: rgb(193, 193, 193);
-    color: black;
+.colorGreen{
+    color: green!important;
 }
 
 #inner-container{
@@ -86,10 +85,10 @@ overflow: hidden;
     gap: 1em;
     padding-top: 0;
     padding-bottom: 0;
-    transform: translateX(-200px);
+    /*transform: translateX(-200px);
     transition-duration:0.7s;
 
-    opacity: 0;
+    opacity: 0;*/
 
 }
 .content:hover #inner-top-container{
@@ -113,6 +112,9 @@ border-bottom: 11px solid transparent;
 width: 0;
 height: 0;
 }
+ul li {
+    list-style-type: none;
+  }
 
 #background-pink{
     position: absolute;
@@ -177,7 +179,9 @@ nav{
     padding-bottom: 23px;
     z-index: 2;
 }
-
+.id{
+    color: transparent;
+}
 #album-image{
     height: 100%;
 }
