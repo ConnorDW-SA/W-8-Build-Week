@@ -27,7 +27,7 @@ body > aside > div > ul > li:nth-child(6) {
   font-size: 0.8rem;
 }
 
-body > main > div > div.container-fluid > img {
+.artist-img-large {
   width: 100%;
   height: 320%;
   object-fit: cover;
