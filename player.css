@@ -6,6 +6,7 @@
 
     justify-content: space-between;
     height: calc(100% - 7em);
+    overflow: hidden;
 }
 .body {
     display: flex;
