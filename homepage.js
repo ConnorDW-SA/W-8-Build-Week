@@ -1,5 +1,7 @@
 const generateCard = (song) => {};
 
+let randomAlbum = ``;
+
 let defaultSearch = "queen";
 
 const bigCardLayout = `col-md-2`;
@@ -29,9 +31,11 @@ const search = async (text) => {
             (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
         );
 
+        randomAlbum = albums[Math.floor(Math.random() * albums.length)].id;
+
         for (const artist of artists) {
             let html = `<div class="${bigCardLayout}">
-                <a class="big-card artist" href="artistFinish.html?artist_id=${artist.id}">
+                <a class="big-card artist" href="artistFinish.html?artist_id=${artist.id}&album_id=${randomAlbum}">
                     <img src="${artist.picture}" alt="${artist.name}">
                     <h4>${artist.name}</h4>
                     <h5>Artist</h5>
@@ -59,7 +63,7 @@ const search = async (text) => {
                 <img src="https://e-cdns-images.dzcdn.net/images/artist/${song.md5_image}/120x120-000000-80-0-0.jpg" alt="${song.title}" />
                 <div class="details">
                     <h4>${song.title}</h4>
-                    <a href="artistFinish.html?artist_id=${song.artist.id}">${song.artist.name}</a>
+                    <a href="artistFinish.html?artist_id=${song.artist.id}&album_id=${randomAlbum}">${song.artist.name}</a>
                 </div>
             </div>`;
 
@@ -77,7 +81,7 @@ const search = async (text) => {
         $(".showcase .details a").text(featuredSong.artist.name);
         $(".showcase .details a").attr(
             "href",
-            `artistFinish.html?artist_id=${featuredSong.artist.id}`
+            `artistFinish.html?artist_id=${featuredSong.artist.id}&album_id=${randomAlbum}`
         );
     }
 };
