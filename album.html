@@ -524,8 +524,8 @@
         listOfsong.tracks.data.forEach((song, index) => {
           let dd = song.duration;
           const songli = document.createElement("li");
-          songli.classList.add("list-album");
-          /* songli.addEventListener(
+          //songli.classList.add("list-album");
+          songli.addEventListener(
             "click",
             setPlayerImage(`${listOfsong.cover}`)
           );
@@ -535,19 +535,20 @@
           songli.addEventListener(
             "click",
             setPlayerSubtitle(listOfsong.artist.name)
-          );
+          ); /*
           songli.addEventListener("click", setPlayerProgress(song.duration));*/
 
-          songli.innerHTML += `<div class="list-left-side" onclick="changecolor(event)">
+          songli.innerHTML += `
+          <div  onclick="changecolor(event)" class="list-album"><div class="list-left-side">
                   <div>${index + 1}</div>
                   <div class="flex-column">
                     <div class="gettitle">${song.title}</div>
                     <div>${listOfsong.artist.name}</div>
                   </div>
                 </div>
-                <div>${
+                <div class="time-song">${
                   (dd - (dd %= 60)) / 60 + (9 < dd ? ":" : ":0") + dd
-                }</div>`;
+                }</div></div>`;
           console.log(songli);
 
           list.appendChild(songli);
@@ -570,6 +571,10 @@
         getTitlePlayer.innerHTML = `<div>
           ${event.currentTarget.querySelector(".gettitle").innerText};
         </div>`;
+        const gettime = document.querySelector(".playback-duration");
+        const getnewtime =
+          event.currentTarget.querySelector(".time-song").innerText;
+        gettime.innerHTML = `<div>${getnewtime}</div>`;
       };
 
       window.onload = async () => {
