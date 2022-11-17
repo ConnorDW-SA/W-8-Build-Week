@@ -1,53 +1,57 @@
-body > main > div > div.container-fluid > nav {
-  background-color: rgba(0, 0, 0, 0);
-  position: relative;
-  z-index: 1;
+body .primary > main > div > div.container-fluid > nav {
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: 1;
 }
 
-body > main > div > div.container-fluid {
-  height: 40%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
+body .primary > main > div > div.container-fluid {
+    height: 40%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
 }
 
 .content-text {
-  height: 60%;
-  background: linear-gradient(180deg, rgb(65, 64, 64) 10%, rgb(19, 18, 18) 50%);
-  font-size: smaller;
+    height: 60%;
+    background: linear-gradient(
+        180deg,
+        rgb(65, 64, 64) 10%,
+        rgb(19, 18, 18) 50%
+    );
+    font-size: smaller;
 }
 
-body > main > div > div.content-text > div > img {
-  padding: 0;
+body .primary > main > div > div.content-text > div > img {
+    padding: 0;
 }
 
-body > aside > div > ul > li:nth-child(6) {
-  font-size: 0.8rem;
+body .primary > aside > div > ul > li:nth-child(6) {
+    font-size: 0.8rem;
 }
 
 .artist-img-large {
-  width: 100%;
-  height: 320%;
-  object-fit: cover;
-  position: absolute;
-  z-index: 0;
-  filter: brightness(0.6);
+    width: 100%;
+    height: 320%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+    filter: brightness(0.6);
 }
 
-body > aside > div > ul > li.nav-item.text-truncate {
-  line-height: 1.2;
+body .primary > aside > div > ul > li.nav-item.text-truncate {
+    line-height: 1.2;
 }
 
 #playing-gif {
-  height: 16px;
-  width: 32px;
-  background: none;
-  padding-right: 10px;
+    height: 16px;
+    width: 32px;
+    background: none;
+    padding-right: 10px;
 }
 
-body > main > div > div.container-fluid > div {
-  position: relative;
-  z-index: 1;
+body .primary > main > div > div.container-fluid > div {
+    position: relative;
+    z-index: 1;
 }
