@@ -73,7 +73,7 @@ async function loadSongs() {
       songList[i].id
     }')"><div class="row justify-content-between my-4 ">
                       
-                           <div class="row ml-5 text-left w-25 index-selector text-truncate d-block"><img class="" id="playing-gif" src="images/playing.gif" /><img
+                           <div class="row ml-5 text-left w-25 index-selector text-truncate d-block"><img class="text-left" id="playing-gif" src="images/playing.gif" /><img
                           class="mx-3 album-cover-small" src="${
                             album.cover_small
                           }" style="height: 60px" /><span class="mt-2 song-list-text-title">${
