@@ -476,10 +476,19 @@
         const albums = await response.json();
         return albums;
       }
-
+      let list11 = 0;
       function renderAlbum(listOfsong) {
+        list11 = listOfsong;
         console.log(listOfsong);
         console.log(listOfsong.tracks.data);
+        console.log(listOfsong.artist.id);
+        const getApage = document.querySelector("#go-artist");
+        console.log(listOfsong.artist.id);
+        console.log(getApage);
+        getApage.innerHTML = `
+
+          <a href="artistFinish.html?artist_id=${listOfsong.artist.id}&album_id=${albumId}">Go to artist page</a>`;
+        console.log(getApage);
         let list = document.querySelector("#ordered-list-album");
         console.log(list);
         let headerPicture = document.querySelector("#album-image");
@@ -612,9 +621,12 @@
                 Home
               </a>`;
         const getApage = document.querySelector("#go-artist");
+        console.log(list11.artist.id);
+        console.log(getApage);
         getApage.innerHTML = `
 
-          <a href="artistFinish.html?album_id=32452&artist_id=32534&track_id=${getIdElement}">Go to Artist page</a>`;
+         <a href="artistFinish.html?artist_id=${list11.artist.id}&album_id=${albumId}&track_id=${getIdElement}">Go to artist page</a>`;
+        console.log(getApage);
       };
 
       window.onload = async () => {
