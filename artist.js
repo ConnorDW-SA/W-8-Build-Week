@@ -117,7 +117,9 @@ async function showLessSongs() {
     y = 18;
   });
 }
-
+async function goToAlbum() {
+  $(".link-to-album").attr("href", `album.html?album_id=${album_id}`);
+}
 // async function songPlayingEqualizer() {
 //   $("#playing-gif").hide();
 // }
@@ -128,6 +130,7 @@ window.onload = () => {
   getAlbum();
   showButton();
   showLessSongs();
+  goToAlbum();
 };
 
 // ---------------------------------
