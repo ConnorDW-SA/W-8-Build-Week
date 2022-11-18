@@ -180,10 +180,10 @@ padding: 0;
 }
 #backg-white img{
     box-sizing: content-box;
-    width: 110%;
-    height: 110%;
-    margin-top: -5px;
-    margin-left: -1px;
+    width: 113%;
+    height: 113%;
+    margin-top: -6px;
+    margin-left: -2px;
 }
 nav{
     background-color: transparent;
