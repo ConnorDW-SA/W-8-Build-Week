@@ -607,13 +607,13 @@
         const getAnchorTag = document.querySelector("#go-back");
         const getIdElement = event.currentTarget.querySelector(".id").innerText;
         console.log(getIdElement);
-        getAnchorTag.innerHTML = `<a href="homepage.html?album_id=32452&artist_id=32534&track_id=${getIdElement}">
+        getAnchorTag.innerHTML = `<a href="homepage.html?album_id=${albumId}&artist_id=${list11.artist.id}&track_id=${getIdElement}">
              <i class="fa-solid fa-chevron-left"></i
           ></a>`;
         const gethpage = document.querySelector("#h-page");
         gethpage.innerHTML = `
           <a
-                href="homepage.html?album_id=32452&artist_id=32534&track_id=${getIdElement}"
+                href="homepage.html?album_id=${albumId}&artist_id=${list11.artist.id}&track_id=${getIdElement}"
                 class="nav-link active"
                 aria-current="page"
               >
