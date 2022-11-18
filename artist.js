@@ -69,9 +69,9 @@ async function loadSongs() {
     const row = document.createElement("div");
     const songList = album.tracks.data;
 
-    row.innerHTML = `<a href="#" class="a-class-songs" onclick="playTrack('${
+    row.innerHTML = `<a href="#" class="a-class-songs childElement" onclick="playTrack('${
       songList[i].id
-    }')"><div class="row justify-content-between my-4 childElement">
+    }')"><div class="row justify-content-between my-4 ">
                       
                            <div class="row ml-5 text-left w-25 index-selector text-truncate d-block"><img class="" id="playing-gif" src="images/playing.gif" /><img
                           class="mx-3 album-cover-small" src="${

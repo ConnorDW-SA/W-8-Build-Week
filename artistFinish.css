@@ -61,11 +61,27 @@ div.main-content {
   overflow-y: hidden;
 }
 
-.a-class-songs:hover {
+.a {
   text-decoration: none;
+}
+.a-class-songs:hover {
   color: rgb(75, 131, 49);
+  text-decoration: none;
 }
 
 .a-class-songs:focus #playing-gif {
   display: unset;
+}
+
+body
+  > div.primary
+  > main
+  > div
+  > div.content-text
+  > div.container-fluid.mx-0.px-0
+  > div
+  > div.container.col-9
+  > div
+  > div:nth-child(n):hover {
+  color: rgb(75, 131, 49);
 }
