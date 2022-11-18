@@ -1,8 +1,8 @@
 // Fetching urlParams
 
-const urlParams = new URLSearchParams(window.location.search);
-const artist_id = urlParams.get("artist_id");
-const album_id = urlParams.get("album_id");
+const urlParamsArtist = new URLSearchParams(window.location.search);
+const artist_id = urlParamsArtist.get("artist_id");
+const album_id = urlParamsArtist.get("album_id");
 
 // Fetching artist details from urlParams and inserting details onto page
 
@@ -56,7 +56,7 @@ async function loadSongs() {
     const row = document.createElement("div");
     const songList = album.tracks.data;
 
-    row.innerHTML = `<a href="#" class="a-class-songs"><div class="row justify-content-between my-4 childElement">
+    row.innerHTML = `<a href="#" class="a-class-songs" onclick="playTrack('${song.id}')"><div class="row justify-content-between my-4 childElement">
                       
                            <div class="row ml-5 text-left w-25 index-selector text-truncate d-block"><img class="" id="playing-gif" src="images/playing.gif" /><img
                           class="mx-3 album-cover-small" src="${album.cover_small}" style="height: 60px" /><span class="mt-2 song-list-text-title">${songList[i].title}</span></div>
@@ -95,9 +95,9 @@ async function showLessSongs() {
   });
 }
 
-async function songPlayingEqualizer() {
-  $("#playing-gif").hide();
-}
+// async function songPlayingEqualizer() {
+//   $("#playing-gif").hide();
+// }
 // Loading functions
 
 window.onload = () => {
@@ -105,7 +105,6 @@ window.onload = () => {
   getAlbum();
   showButton();
   showLessSongs();
-  songPlayingEqualizer();
 };
 
 // ---------------------------------
