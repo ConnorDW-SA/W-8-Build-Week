@@ -43,6 +43,7 @@
   width: 32px;
   background: none;
   padding-right: 10px;
+  display: none;
 }
 
 .artist-verified {
@@ -65,6 +66,6 @@ div.main-content {
   color: rgb(75, 131, 49);
 }
 
-#playing-gif:focus {
-  display: block;
+.a-class-songs:focus #playing-gif {
+  display: unset;
 }

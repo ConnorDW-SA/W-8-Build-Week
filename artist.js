@@ -1,5 +1,15 @@
-// Fetching urlParams
+const options = {
+  method: "GET",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZjZjA3ZWQ0YmUzZDAwMTU4NDVmZDciLCJpYXQiOjE2NjgxNjQ2ODAsImV4cCI6MTY2OTM3NDI4MH0.PJrHp_ME0y-gY2qVFhYjuFXEY6XrpjlrcjVQm07mnyo"
+  }
+};
 
+function formatTime(s) {
+  return (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s;
+}
+// Fetching urlParams
 const urlParamsArtist = new URLSearchParams(window.location.search);
 const artist_id = urlParamsArtist.get("artist_id");
 const album_id = urlParamsArtist.get("album_id");
@@ -8,7 +18,8 @@ const album_id = urlParamsArtist.get("album_id");
 
 async function getArtists() {
   const response = await fetch(
-    `https://striveschool-api.herokuapp.com/api/deezer/artist/${artist_id}`
+    `https://striveschool-api.herokuapp.com/api/deezer/artist/${artist_id}`,
+    options
   );
   const artist = await response.json();
 
@@ -22,7 +33,8 @@ async function getArtists() {
 
 async function getAlbum() {
   const response = await fetch(
-    `https://striveschool-api.herokuapp.com/api/deezer/album/${album_id}`
+    `https://striveschool-api.herokuapp.com/api/deezer/album/${album_id}`,
+    options
   );
   const album = await response.json();
 
@@ -47,7 +59,8 @@ loadSongs();
 
 async function loadSongs() {
   const response = await fetch(
-    `https://striveschool-api.herokuapp.com/api/deezer/album/${album_id}`
+    `https://striveschool-api.herokuapp.com/api/deezer/album/${album_id}`,
+    options
   );
   const album = await response.json();
 
@@ -56,12 +69,22 @@ async function loadSongs() {
     const row = document.createElement("div");
     const songList = album.tracks.data;
 
-    row.innerHTML = `<a href="#" class="a-class-songs" onclick="playTrack('${song.id}')"><div class="row justify-content-between my-4 childElement">
+    row.innerHTML = `<a href="#" class="a-class-songs" onclick="playTrack('${
+      songList[i].id
+    }')"><div class="row justify-content-between my-4 childElement">
                       
                            <div class="row ml-5 text-left w-25 index-selector text-truncate d-block"><img class="" id="playing-gif" src="images/playing.gif" /><img
-                          class="mx-3 album-cover-small" src="${album.cover_small}" style="height: 60px" /><span class="mt-2 song-list-text-title">${songList[i].title}</span></div>
-                          <div class="rank mt-4 text-right w-25 text-truncate ">Rank ${songList[i].rank}</div>
-                          <div class="mr-5 mt-4 text-left w-25 text-truncate ">${songList[i].duration} seconds</div>
+                          class="mx-3 album-cover-small" src="${
+                            album.cover_small
+                          }" style="height: 60px" /><span class="mt-2 song-list-text-title">${
+      songList[i].title
+    }</span></div>
+                          <div class="rank mt-3 text-right w-25 text-truncate ">Rank ${
+                            songList[i].rank
+                          }</div>
+                          <div class="mr-5 mt-3 text-left w-25 text-truncate ">${formatTime(
+                            songList[i].duration
+                          )}</div>
                          </div></a>`;
     container.append(row);
   }
