@@ -138,3 +138,21 @@
     transform: translateX(calc(-100% + var(--progress-bar-width)));
     width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+    .player .song img {
+        display: none;
+    }
+    .player .buttons i {
+        display: none;
+    }
+    .player .buttons .pause {
+        display: block;
+    }
+    .player .buttons .pause i {
+        display: block;
+    }
+    .player .song .text {
+        margin-right: 1em;
+    }
+}
