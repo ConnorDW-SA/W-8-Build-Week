@@ -59,7 +59,7 @@ const search = async (text) => {
 
         let fourSongs = songs.slice(1, 5);
         for (const song of fourSongs) {
-            let html = `<div class="song">
+            let html = `<div class="song" onclick="playTrack('${song.id}');">
                 <img src="https://e-cdns-images.dzcdn.net/images/artist/${song.md5_image}/120x120-000000-80-0-0.jpg" alt="${song.title}" />
                 <div class="details">
                     <h4>${song.title}</h4>
@@ -83,6 +83,12 @@ const search = async (text) => {
             "href",
             `artistFinish.html?artist_id=${featuredSong.artist.id}&album_id=${randomAlbum}`
         );
+
+        $(".showcase .fa-stack").data("track", featuredSong.id);
+
+        $(".showcase .fa-stack").on("click", function () {
+            playTrack($(this).data("track"));
+        });
     }
 };
 
