@@ -48,8 +48,12 @@
           </a>
           <hr />
           <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link active" aria-current="page">
+            <li class="nav-item" id="h-page">
+              <a
+                href="homepage.html"
+                class="nav-link active"
+                aria-current="page"
+              >
                 <i class="fa-solid fa-house"></i>
                 Home
               </a>
@@ -279,7 +283,7 @@
             <div id="background-pink"></div>
 
             <div id="inner-top-container">
-              <div id="play-button">
+              <div id="play-button" onclick="changeplay(event)">
                 <div id="play-symbol"></div>
               </div>
               <div onclick="like(event)" id="faheart">
@@ -297,7 +301,9 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-10">Go to Artist page</div>
+                    <div class="col-10" id="go-artist">
+                      <a href="artistFinish.html">Go to Artist page</a>
+                    </div>
                     <div class="col-2">
                       <a href=""> </a>
                     </div>
@@ -470,10 +476,19 @@
         const albums = await response.json();
         return albums;
       }
-
+      let list11 = 0;
       function renderAlbum(listOfsong) {
+        list11 = listOfsong;
         console.log(listOfsong);
         console.log(listOfsong.tracks.data);
+        console.log(listOfsong.artist.id);
+        const getApage = document.querySelector("#go-artist");
+        console.log(listOfsong.artist.id);
+        console.log(getApage);
+        getApage.innerHTML = `
+
+          <a href="artistFinish.html?artist_id=${listOfsong.artist.id}&album_id=${albumId}">Go to artist page</a>`;
+        console.log(getApage);
         let list = document.querySelector("#ordered-list-album");
         console.log(list);
         let headerPicture = document.querySelector("#album-image");
@@ -556,7 +571,7 @@
                           <div class="gettitle">${song.title}</div>
                           <div>${listOfsong.artist.name}<span class="id">${
             song.id
-          }</span></div> 
+          }</span></div>
                         </div>
                       </div>
                       <div class="time-song">${
@@ -592,9 +607,26 @@
         const getAnchorTag = document.querySelector("#go-back");
         const getIdElement = event.currentTarget.querySelector(".id").innerText;
         console.log(getIdElement);
-        getAnchorTag.innerHTML = `<a href="homepage.html?album_id=32452&artist_id=32534&track_id=${getIdElement}">
+        getAnchorTag.innerHTML = `<a href="homepage.html?album_id=${albumId}&artist_id=${list11.artist.id}&track_id=${getIdElement}">
              <i class="fa-solid fa-chevron-left"></i
           ></a>`;
+        const gethpage = document.querySelector("#h-page");
+        gethpage.innerHTML = `
+          <a
+                href="homepage.html?album_id=${albumId}&artist_id=${list11.artist.id}&track_id=${getIdElement}"
+                class="nav-link active"
+                aria-current="page"
+              >
+                <i class="fa-solid fa-house"></i>
+                Home
+              </a>`;
+        const getApage = document.querySelector("#go-artist");
+        console.log(list11.artist.id);
+        console.log(getApage);
+        getApage.innerHTML = `
+
+         <a href="artistFinish.html?artist_id=${list11.artist.id}&album_id=${albumId}&track_id=${getIdElement}">Go to artist page</a>`;
+        console.log(getApage);
       };
 
       window.onload = async () => {
@@ -605,6 +637,18 @@
       const like = function (event) {
         const geticon = document.querySelector(".fa-heart");
         geticon.classList.toggle("fa-solid");
+      };
+      let verifyPlay = 0;
+      const changeplay = function () {
+        const getPlayb = document.querySelector("#play-button");
+        if (verifyPlay !== "changed") {
+          verifyPlay = "changed";
+
+          return (getPlayb.innerHTML = `<div id="backg-white"><img alt="stop" src="/images/Eo_circle_green_pause-64x64.svg.png"></div>`);
+        } else {
+          verifyPlay = 0;
+          return (getPlayb.innerHTML = `<div id="play-symbol"></div>`);
+        }
       };
     </script>
     <!--<script

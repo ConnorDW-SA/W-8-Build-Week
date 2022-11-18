@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="loginPage.css" />
+  </head>
+  <body>
+    <div id="main" class="row">
+      <div id="biggestTopContainer" class="col-12 col-md-8 col-lg-7">
+        <a
+          href="#"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none brand"
+        >
+          <i class="fa-brands fa-spotify"></i>
+        </a>
+        <h1>Spotify</h1>
+      </div>
+      <hr class="col-12" />
+      <div id="beggestbottomContainer" class="col-12 col-md-8 col-lg-7">
+        <div><h3>To continue, log in to Spotify</h3></div>
+        <div>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            id="blue"
+          >
+            <h3>
+              <i class="fa-brands fa-facebook"></i> CONTINUE WITH FACEBOOK
+            </h3>
+          </button>
+        </div>
+        <div>
+          <button
+            type="button"
+            class="btn btn-dark btn-lg btn-block"
+            id="black"
+          >
+            <h3><i class="fa-brands fa-apple"></i> CONTINUE WITH APPLE</h3>
+          </button>
+        </div>
+        <div>
+          <h3>OR</h3>
+        </div>
+        <div>
+          <input type="text" placeholder="Email address of username" />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            onkeyup="allow(event)"
+            id="password"
+          />
+        </div>
+        <div class="row" id="flex-log-in">
+          <div class="col-6 col-md-6">
+            <h3 id="flex-remember">
+              <input type="checkbox" id="remember" /><label for="remember"
+                >Remember me</label
+              >
+            </h3>
+          </div>
+          <div class="col-6 col-md-6">
+            <button
+              type="button"
+              class="btn btn-success btn-lg btn-block"
+              id="green"
+            >
+              <h3 id="lOGin" onclick="goHome(event)">LOG IN</h3>
+            </button>
+          </div>
+        </div>
+        <div>
+          <p>Forgot your password?</p>
+        </div>
+        <hr />
+        <div><h3>Don't have an account?</h3></div>
+        <div>
+          <button
+            type="button"
+            class="btn btn-ligh btn-lg btn-block"
+            id="white"
+          >
+            <h3>SIGN UP FOR SPOTIFY</h3>
+          </button>
+        </div>
+        <hr />
+        <div>
+          <p>
+            If you click log in with Facebook and you are not a Spotify user,
+            you will be registered and you agree to Spotify
+            <span class="color-green"><b>terms & Conditions</b></span> and
+            <span class="color-green"><b>Privacy Policy</b></span
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let correct = "Epicode";
+      let getvalue1 = 0;
+      let login1 = 0;
+      const allow = function (event) {
+        const getvalue = document.querySelector("#password").value;
+        const login = document.querySelector("#lOGin");
+        getvalue1 = getvalue;
+        login1 = login;
+        console.log(getvalue);
+        console.log(login);
+        if (getvalue !== correct) {
+          return;
+        } else {
+          login.innerHTML = `<a href="homepage.html">LOG IN</a>`;
+        }
+      };
+
+      const goHome = function (event) {
+        if (getvalue1 !== correct) {
+          return alert("Wrong Password or username");
+        } else {
+          return;
+        }
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
