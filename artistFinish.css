@@ -59,3 +59,12 @@
 div.main-content {
   overflow-y: hidden;
 }
+
+.a-class-songs:hover {
+  text-decoration: none;
+  color: rgb(75, 131, 49);
+}
+
+#playing-gif:focus {
+  display: block;
+}
